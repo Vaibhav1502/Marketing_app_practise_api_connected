@@ -2,6 +2,7 @@
 
 import 'package:api_demo_calling/Screens/servenq_ui.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -39,19 +40,16 @@ class _LoginScreenState extends State<LoginScreen> {
       final prefs = await SharedPreferences.getInstance();
       await prefs.setString("token", token);
 
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Login Successful ✅")),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text("Login Successful ✅")));
 
       // Go to next screen
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (_) =>  Servicenq()),
-      );
+      Navigator.push(context, MaterialPageRoute(builder: (_) => Servicenq()));
     } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Login Failed ❌")),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text("Login Failed ❌")));
     }
 
     setState(() => isLoading = false);
@@ -60,29 +58,66 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Login")),
+      appBar: AppBar(
+        backgroundColor: Colors.teal,
+        title: const Text(
+          "Login",
+          style: TextStyle(color: Colors.white, fontSize: 30),
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextField(
-              controller: emailController,
-              decoration: const InputDecoration(labelText: "Email"),
+            Image.asset(
+              "assets/social-media-marketing.png",
+              width: 200,
+              height: 200,
+              fit: BoxFit.cover,
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 40),
+            TextField(
+              keyboardType: TextInputType.emailAddress,
+              controller: emailController,
+              decoration: const InputDecoration(
+                labelText: "Email",
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
             TextField(
               controller: passwordController,
               obscureText: true,
-              decoration: const InputDecoration(labelText: "Password"),
+              decoration: const InputDecoration(
+                labelText: "Password",
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                ),
+              ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 40),
             isLoading
-                ? const CircularProgressIndicator()
-                : ElevatedButton(
+                ? SpinKitFadingCircle(color: Colors.teal)
+                : SizedBox(
+                  height: 50,
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.teal,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
                     onPressed: login,
-                    child: const Text("Login"),
+                    child: const Text(
+                      "Login",
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ),
                   ),
+                ),
           ],
         ),
       ),
