@@ -1,11 +1,12 @@
 import 'dart:convert';
-
 import 'package:api_demo_calling/Models/contact_enq_model_get.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ContactEnqGetController extends GetxController {
+
+     
 
      var Getconenqi = <Data>[].obs;
      var isLoading = true.obs;

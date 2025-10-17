@@ -7,9 +7,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class BlogController extends GetxController {
 
+     
+
       var blog = <Data>[].obs;
       var isLoading = true.obs;
       String? token;
+
 
       @override
       void onInit() {

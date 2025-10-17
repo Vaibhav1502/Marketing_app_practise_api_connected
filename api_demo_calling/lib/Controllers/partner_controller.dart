@@ -7,7 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class PartnerController extends GetxController {
 
-  
+     
       var partnr = <Data>[].obs;
       var isLoading = true.obs;
       String? token;
