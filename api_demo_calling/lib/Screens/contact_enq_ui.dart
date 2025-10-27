@@ -12,7 +12,7 @@ class ContactEnq extends StatefulWidget {
 }
 
 class _ContactEnqState extends State<ContactEnq> {
-  ContactenqController controller = Get.put(ContactenqController());
+  ContactenqController controller = Get.find<ContactenqController>();
 
   @override
   Widget build(BuildContext context) {

@@ -16,6 +16,7 @@ class BlogController extends GetxController {
 
       @override
       void onInit() {
+         print("🚀 [BlogController] Initialized and fetching blogs...");
         fetchBlog();
         super.onInit();
       }

@@ -1,9 +1,11 @@
 import 'package:api_demo_calling/Screens/bottom_nav_bar.dart';
 import 'package:api_demo_calling/Screens/login_ui.dart';
+import 'package:api_demo_calling/bindings/main_binding.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'servenq_ui.dart'; // your ServiceEnq page
+
  
 
 class SplashScreen extends StatefulWidget {
@@ -28,10 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
     if (token != null && token.isNotEmpty) {
       // ✅ Token mil gaya → direct home
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (_) => BottomNavExample()),
-      );
+      Get.offAll(()=> BottomNavExample(), binding: MainBinding());
     } else {
       // ❌ Token nahi mila → login dikha
       Navigator.pushReplacement(

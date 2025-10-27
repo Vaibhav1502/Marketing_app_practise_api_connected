@@ -4,7 +4,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 
 class PartnerUi extends StatelessWidget {
-  final PartnerController controller = Get.put(PartnerController());
+  final PartnerController controller = Get.find<PartnerController>();
   PartnerUi({super.key});
 
   @override

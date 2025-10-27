@@ -4,7 +4,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 
 class BlogListScreen extends StatelessWidget {
-  final BlogController controller = Get.put(BlogController());
+  final BlogController controller = Get.find<BlogController>();
 
   BlogListScreen({super.key});
 

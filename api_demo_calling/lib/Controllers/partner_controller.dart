@@ -14,6 +14,7 @@ class PartnerController extends GetxController {
 
       @override
       void onInit() {
+        print("🚀 [PartnerController] Initialized and fetching Partner...");
         fetchPartner();
         super.onInit();
         

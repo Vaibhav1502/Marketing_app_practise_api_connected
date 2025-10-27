@@ -14,6 +14,7 @@ class ContactEnqGetController extends GetxController {
 
       @override
       void onInit() {
+        print("🚀 [ContactEnqGetController] Initialized and fetching ContactEnqGet...");
         fetchContactEnq();
         super.onInit();
       }

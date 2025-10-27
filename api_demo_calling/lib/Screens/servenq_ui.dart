@@ -7,7 +7,7 @@ import 'package:shimmer/shimmer.dart';
 
 
 class Servicenq extends StatelessWidget {
-  final Servicenqcontroller controller = Get.put(Servicenqcontroller());
+  final Servicenqcontroller controller = Get.find<Servicenqcontroller>();
   final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
 
   Servicenq({super.key});

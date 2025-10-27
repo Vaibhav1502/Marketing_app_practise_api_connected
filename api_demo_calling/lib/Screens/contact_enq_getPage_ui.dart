@@ -4,7 +4,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 
 class EnquiryListScreen extends StatelessWidget {
-  final ContactEnqGetController controller = Get.put(ContactEnqGetController());
+  final ContactEnqGetController controller = Get.find<ContactEnqGetController>();
 
   EnquiryListScreen({super.key});
 

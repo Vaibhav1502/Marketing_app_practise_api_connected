@@ -15,6 +15,7 @@ class Servicenqcontroller extends GetxController {
 
       @override
       void onInit() {
+        print("🚀 [Servicenqcontroller] Initialized and fetching Servicenq...");
         fetchServiceEnq();
         super.onInit();
       }
