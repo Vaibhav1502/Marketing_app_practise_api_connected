@@ -48,9 +48,10 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Image(image: AssetImage("assets/logo-new.png")),
             Text("Checking Token From Storage..."),
             SizedBox(height: 20),
-            SpinKitFadingCircle(color: Colors.teal),
+            SpinKitFadingCircle(color: Colors.red),
           ],
         ),
         ),

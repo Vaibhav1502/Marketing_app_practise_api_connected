@@ -6,6 +6,8 @@ import 'package:api_demo_calling/Screens/servenq_ui.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavExample extends StatefulWidget {
+  const BottomNavExample({super.key});
+
   @override
   _BottomNavExampleState createState() => _BottomNavExampleState();
 }
@@ -49,7 +51,7 @@ class _BottomNavExampleState extends State<BottomNavExample> {
         type: BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        selectedItemColor: Colors.teal,
+        selectedItemColor: Colors.red,
         unselectedItemColor: Colors.black54,
         showUnselectedLabels: true,
         iconSize: 25,

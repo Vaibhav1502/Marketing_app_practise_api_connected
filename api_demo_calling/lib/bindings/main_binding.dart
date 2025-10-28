@@ -10,7 +10,7 @@ class MainBinding extends Bindings {
   void dependencies() {
 
       // Use lazyPut to create the controller only when it's first needed.
-    Get.lazyPut<Servicenqcontroller>(() => Servicenqcontroller());
+    //Get.lazyPut<Servicenqcontroller>(() => Servicenqcontroller());
     Get.lazyPut<ContactEnqGetController>(() => ContactEnqGetController());
     Get.lazyPut<BlogController>(() => BlogController());
     // Note: ContactenqController for the POST request can be put normally

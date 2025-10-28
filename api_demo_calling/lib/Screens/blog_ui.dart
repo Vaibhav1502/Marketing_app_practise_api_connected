@@ -12,7 +12,7 @@ class BlogListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.red,
         title: const Text(
           'Blogs',
           style: TextStyle(color: Colors.white, fontSize: 30),
@@ -20,12 +20,13 @@ class BlogListScreen extends StatelessWidget {
       ),
       body: Obx(() {
         if (controller.isLoading.value) {
-          return const Center(child: SpinKitFadingCircle(color: Colors.teal));
+          return const Center(child: SpinKitFadingCircle(color: Colors.red));
         }
         // if (controller.blog.isEmpty) {
         //   return const Center(child: Text("No Data Found"));
         // }
         return RefreshIndicator(
+          color: Colors.red,
           onRefresh: () async {
             await controller.fetchBlog();
           },

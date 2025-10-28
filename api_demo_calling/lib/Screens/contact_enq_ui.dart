@@ -18,7 +18,7 @@ class _ContactEnqState extends State<ContactEnq> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.red,
         title: Text(
           'Contact Enquiry',
           style: TextStyle(color: Colors.white, fontSize: 30),

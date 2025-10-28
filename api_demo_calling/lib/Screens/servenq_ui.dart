@@ -7,7 +7,7 @@ import 'package:shimmer/shimmer.dart';
 
 
 class Servicenq extends StatelessWidget {
-  final Servicenqcontroller controller = Get.find<Servicenqcontroller>();
+  final Servicenqcontroller controller = Get.put(Servicenqcontroller());
   final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
 
   Servicenq({super.key});
@@ -16,7 +16,7 @@ class Servicenq extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.red,
         title: const Text(
           'Service Enquiry',
           style: TextStyle(color: Colors.white, fontSize: 30),
@@ -42,7 +42,7 @@ class Servicenq extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Shimmer.fromColors(
                   baseColor: Colors.grey.shade300,
-                  highlightColor: Colors.grey.shade100,
+                  highlightColor: Colors.red.shade100,
                   child: Card(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)),
@@ -73,6 +73,7 @@ class Servicenq extends StatelessWidget {
 
         // 🔹 When data is loaded
         return RefreshIndicator(
+          color: Colors.red,
           onRefresh: () async {
             await controller.fetchServiceEnq();
           },

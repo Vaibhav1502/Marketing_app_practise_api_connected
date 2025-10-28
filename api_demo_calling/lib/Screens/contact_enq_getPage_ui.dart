@@ -12,7 +12,7 @@ class EnquiryListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.red,
         title: const Text(
           'Enquiries',
           style: TextStyle(color: Colors.white, fontSize: 30),
@@ -20,12 +20,13 @@ class EnquiryListScreen extends StatelessWidget {
       ),
       body: Obx(() {
         if (controller.isLoading.value) {
-          return const Center(child: SpinKitFadingCircle(color: Colors.teal));
+          return const Center(child: SpinKitFadingCircle(color: Colors.red));
         }
         // if (controller.Getconenqi.isEmpty) {
         //   return const Center(child: Text("No Data Found"));
         // }
         return RefreshIndicator(
+          color: Colors.red,
           onRefresh: () async {
             await controller.fetchContactEnq();
           },
@@ -75,7 +76,7 @@ class EnquiryListScreen extends StatelessWidget {
                                         Text(
                                           'Status: ${conenq.status}',
                                           style: TextStyle(
-                                            color: Colors.teal,
+                                            color: Colors.red,
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),

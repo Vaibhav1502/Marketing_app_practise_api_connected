@@ -16,16 +16,17 @@ class PartnerUi extends StatelessWidget {
           "Partners",
           style: TextStyle(color: Colors.white, fontSize: 30),
         ),
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.red,
       ),
       body: Obx(() {
         if (controller.isLoading.value) {
-          return const Center(child: SpinKitFadingCircle(color: Colors.teal));
+          return const Center(child: SpinKitFadingCircle(color: Colors.red));
         }
         // if (controller.partners.isEmpty) {
         //   return const Center(child: Text("No Data Found"));
         // }
         return RefreshIndicator(
+          color: Colors.red,
           onRefresh: () async {
             await controller.fetchPartner();
           },
